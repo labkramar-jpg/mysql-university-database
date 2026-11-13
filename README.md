@@ -70,6 +70,20 @@ Show all courses:
 - Insert and retrieve data
 - Practice SQL queries
 
+## SQL Practice Exercises
+
+This repository includes 35 SQL practice exercises:
+
+- [SQL Basics — 25 exercises](exercises/task-1-sql-basics.sql)
+- [SQL JOINs — 10 exercises](exercises/task-2-sql-joins.sql)
+
+Topics covered:
+- Data filtering using WHERE, LIKE, IN, and BETWEEN
+- Sorting and limiting results
+- Date and string functions
+- Aggregate functions
+- INNER JOIN operations across multiple tables
+
 ## Author
 
 GitHub: [labkramar-jpg](https://github.com/labkramar-jpg)
