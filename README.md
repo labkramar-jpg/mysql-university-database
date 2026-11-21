@@ -1,4 +1,3 @@
-
 # University Database — MySQL
 
 A relational database project for managing university students, instructors, courses, enrollments, grades, and student projects.
@@ -81,8 +80,11 @@ Topics covered:
 - Data filtering using WHERE, LIKE, IN, and BETWEEN
 - Sorting and limiting results
 - Date and string functions
-- Aggregate functions
 - INNER JOIN operations across multiple tables
+
+## Exercise Compatibility
+
+Some SQL Basics exercises reference a numeric `score` column that is not present in the supplied `students` table. Those queries require a separate compatible practice dataset or an adapted schema. The JOIN exercise filtering for `Computer Science` returns no rows with the supplied sample categories (`IT` and `Exact Sciences`). The original exercise queries are preserved.
 
 ## Author
 

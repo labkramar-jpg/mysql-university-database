@@ -50,7 +50,7 @@ INNER JOIN grades ON students.id = grades.student_id
 INNER JOIN courses ON courses.id = grades.course_id;
 
 -- 10. Instructors and their courses in the Computer Science category
--- Note: The original seed data has 'IT' and 'Точные науки', not 'Computer Science'.
+-- Note: The original seed data has 'IT' and 'Exact Sciences', not 'Computer Science'.
 -- This exact exercise query may return no rows unless the category data is updated.
 SELECT instructors.name, courses.course_name
 FROM instructors

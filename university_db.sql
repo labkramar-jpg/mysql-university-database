@@ -1,8 +1,8 @@
- -- 1. Создание и выбор базы данных
+ -- 1. Create and select the database
 CREATE DATABASE IF NOT EXISTS university_db;
 USE university_db;
 
--- 2. Создание независимых таблиц
+-- 2. Create independent tables
 CREATE TABLE instructors (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
@@ -15,7 +15,7 @@ CREATE TABLE students (
     birth_date DATE
 );
 
--- 3. Создание таблицы курсов (ссылается на преподавателей)
+-- 3. Create the courses table (references instructors)
 CREATE TABLE courses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     course_name VARCHAR(100) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE courses (
     FOREIGN KEY (instructor_id) REFERENCES instructors(id) ON DELETE SET NULL
 );
 
--- 4. Создание таблиц связей (зачисление, оценки, проекты)
+-- 4. Create related tables (enrollments, grades, projects)
 CREATE TABLE enrollments (
     student_id INT,
     course_id INT,
@@ -53,22 +53,22 @@ CREATE TABLE projects (
 );
 
 -- =============================================
--- ЗАПОЛНЕНИЕ ТЕСТОВЫМИ ДАННЫМИ
+-- INSERT SAMPLE DATA
 -- =============================================
 
 INSERT INTO instructors (name) VALUES 
-('Алексей Смирнов'),
-('Елена Иванова');
+('Alexey Smirnov'),
+('Elena Ivanova');
 
 INSERT INTO students (first_name, last_name, birth_date) VALUES 
-('Иван', 'Петров', '2002-05-15'),
-('Мария', 'Сидорова', '2003-08-22'),
-('Дмитрий', 'Кузнецов', '2001-11-10');
+('Ivan', 'Petrov', '2002-05-15'),
+('Maria', 'Sidorova', '2003-08-22'),
+('Dmitry', 'Kuznetsov', '2001-11-10');
 
 INSERT INTO courses (course_name, start_date, category, instructor_id) VALUES 
-('Базы данных и SQL', '2026-09-01', 'IT', 1),
-('Алгоритмы и структуры данных', '2026-09-01', 'IT', 2),
-('Высшая математика', '2026-09-01', 'Точные науки', 1);
+('Databases and SQL', '2026-09-01', 'IT', 1),
+('Algorithms and Data Structures', '2026-09-01', 'IT', 2),
+('Advanced Mathematics', '2026-09-01', 'Exact Sciences', 1);
 
 INSERT INTO enrollments (student_id, course_id, last_attendance_date, status, semester) VALUES 
 (1, 1, '2026-10-15', 'Active', 'Fall 2026'),
@@ -82,5 +82,5 @@ INSERT INTO grades (student_id, course_id, grade) VALUES
 (3, 3, 'A');
 
 INSERT INTO projects (student_id, project_name) VALUES 
-(1, 'Разработка СУБД для интернет-магазина'),
-(2, 'Анализ алгоритмов сортировки');
+(1, 'Database Management System Development for an Online Store'),
+(2, 'Analysis of Sorting Algorithms');
